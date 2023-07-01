@@ -35,6 +35,7 @@ export default {
     return {
       links: [
         { text: 'Home', href: '/' },
+        { text: 'Articles', href: '/articles' },
         { text: 'Photos', href: '/photos' }
       ]
     };
