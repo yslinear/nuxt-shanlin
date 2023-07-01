@@ -17,8 +17,5 @@ const photos = ref([])
 onBeforeMount(async () => {
   const response = await find('photos', { populate: 'media,createdBy' })
   photos.value = response.data
-  photos.value.forEach(photo => {
-    console.log(photo.attributes.media.data.attributes.url)
-  });
 })
 </script>
