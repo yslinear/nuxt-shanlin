@@ -1,10 +1,17 @@
 <template>
-  <div class="bg-gray-100">
-    <Header />
+  <div class="center">
     <div>This is Index Page</div>
   </div>
 </template>
 
-<script setup>
+<style scoped>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+</style>
 
+<script setup>
 </script>

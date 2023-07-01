@@ -1,6 +1,5 @@
 <template>
-  <div class="bg-gray-100">
-    <Header />
+  <div>
     <div class="flex flex-wrap justify-center gap-4 py-8">
       <ul>
         <li v-for="article in articles" :key="article.id">

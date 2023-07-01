@@ -1,12 +1,11 @@
 <template>
-  <div class="bg-gray-100">
-    <Header />
-    <div class="flex flex-wrap justify-center gap-4 py-8">
-      <div v-for="photo in photos" :key="photo.id">
-        <Photo :photo="photo" />
+     <div>
+       <div class="flex flex-wrap justify-center gap-4 py-8">
+         <div v-for="photo in photos" :key="photo.id">
+          <Photo :photo="photo" />
+        </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup>
