@@ -2,7 +2,7 @@
   <div class="bg-gray-100">
     <Header />
     <div class="flex flex-wrap justify-center gap-4 py-8">
-      <div v-for="photo in photos" :key="photo.id" class="w-64 rounded overflow-hidden shadow-lg">
+      <div v-for="photo in photos" :key="photo.id">
         <Photo :photo="photo" />
       </div>
     </div>

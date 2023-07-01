@@ -1,18 +1,14 @@
 <template>
-  <div class="flex flex-col items-center p-4 bg-white border border-gray-200 rounded-lg shadow-md">
-    <div class="flex items-center space-x-1">
-      <img class="w-6 h-6 rounded-full">
-      <div class="text-xs text-gray-500">{{ photo.attributes.createdBy.data.attributes.firstname }}</div>
-    </div>
-    <img :src="imageUrl" class="w-64 h-64 object-cover rounded-lg mb-2">
-    <div class="text-base font-semibold">{{ photo.attributes.caption }}</div>
+  <div>
+    <img :src="imageUrl" class="w-64 h-64 object-cover rounded-lg mb-2 shadow-lg">
+    <div class="text-base font-normal">{{ photo.attributes.caption }}</div>
     <div class="text-xs text-gray-500 my-1">{{ formatDate(photo.attributes.createdAt) }}</div>
   </div>
 </template>
 
 <script setup>
 import { computed } from 'vue'
-import { defineProps, ref } from 'vue'
+import { defineProps } from 'vue'
 
 // 使用 `props` 接收傳入的 `photo` 參數
 const props = defineProps({
