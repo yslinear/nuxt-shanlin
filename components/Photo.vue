@@ -1,8 +1,8 @@
 <template>
   <div>
-    <img :src="imageUrl" class="w-64 h-64 object-cover rounded-lg mb-2 shadow-lg">
-    <div class="text-base font-normal">{{ photo.attributes.caption }}</div>
-    <div class="text-xs text-gray-500 my-1">{{ formatDate(photo.attributes.createdAt) }}</div>
+    <img :src="imageUrl" class="w-64 h-64 object-cover rounded-md mb-2 shadow-lg">
+    <h3 class="text-base font-normal">{{ photo.attributes.caption }}</h3>
+    <div class="text-sm text-gray-500 my-1">{{ formatDate(photo.attributes.createdAt) }}</div>
   </div>
 </template>
 
