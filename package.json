@@ -13,5 +13,8 @@
     "@nuxtjs/strapi": "^1.9.3",
     "@types/node": "^18",
     "nuxt": "^3.6.1"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.14"
   }
 }
