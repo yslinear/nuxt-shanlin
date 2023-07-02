@@ -1,8 +1,13 @@
 <template>
-  <div>
-    <img :src="imageUrl" class="w-64 h-64 object-cover rounded-md mb-2 shadow-lg">
-    <h3 class="text-base font-normal">{{ photo.attributes.caption }}</h3>
+  <div class="border p-4 rounded">
+    <img :src="imageUrl" class="w-full h-full object-cover mb-2">
+    <div class="text-base font-normal">{{ photo.attributes.caption }}</div>
     <div class="text-sm text-gray-500 my-1">{{ formatDate(photo.attributes.createdAt) }}</div>
+    <div>
+      <p class="text-sm" v-for="hashtag in photo.attributes.hashtags?.data" :key="hashtag.id">
+      #{{ hashtag.attributes.text }}
+      </p>
+    </div>
   </div>
 </template>
 

@@ -1,12 +1,13 @@
 <template>
-  <nav>
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-slate-50">
+  <nav class="bg-slate-200">
+    <div class="max-w-screen-md flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="/" class="flex items-center">
-        <img src="https://www.shanlin.co/templates/g5_helium/custom/images/logo-no-background.png" class="h-8 mr-3" alt="ShanLin Logo" />
+        <img src="https://www.shanlin.co/templates/g5_helium/custom/images/logo-no-background.png" class="h-8 mr-3"
+          alt="ShanLin Logo" />
       </a>
-      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden
-         hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400
-          dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden"
+        aria-controls="navbar-default" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +20,8 @@
         <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:border-0">
           <li v-for="(link, index) in links" :key="index">
             <a :href="link.href" class="block py-2 pl-3 pr-4 md:p-0 text-slate-800"
-              :class="`${$route.path === link.href ? 'font-bold' : 'font-light'}`" aria-current="page" v-t="link.text"></a>
+              :class="`${$route.path === link.href ? 'font-bold' : 'font-light'}`" aria-current="page"
+              v-t="link.text"></a>
           </li>
         </ul>
       </div>
