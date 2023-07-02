@@ -14,7 +14,7 @@
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white" v-t="`language`"></h2>
             <ul class="text-gray-600 dark:text-gray-400 font-medium">
               <li class="mb-4" v-for="locale in availableLocales" :key="locale.code">
-                <a href="/" @click.prevent.stop="setLocale(locale.code)">{{ locale.name }}</a>
+                <a href="/" @click.prevent.stop="handleSetLocale(locale.code)">{{ locale.name }}</a>
               </li>
             </ul>
           </div>
@@ -54,4 +54,11 @@ const { locale, locales, setLocale } = useI18n()
 const availableLocales = computed(() => {
   return (locales.value).filter(i => i.code !== locale.value)
 })
+
+function handleSetLocale(code) {
+  setLocale(code)
+    .then(() => {
+      location.reload()
+    })
+}
 </script>
