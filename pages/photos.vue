@@ -16,9 +16,5 @@ const photos = reactive([])
 onBeforeMount(async () => {
   const response = await find('photos', { populate: 'media,hashtags,createdBy', locale: locale.value })
   photos.value = response.data
-  photos.value.push(...photos.value);
-  photos.value.push(...photos.value);
-  photos.value.push(...photos.value);
-  photos.value.push(...photos.value);
 })
 </script>

@@ -22,10 +22,6 @@ const articles = reactive([])
 onBeforeMount(async () => {
   const response = await find('articles', { populate: 'photos.media,createdBy', locale: locale.value })
   articles.value = response.data
-  articles.value.push(...articles.value);
-  articles.value.push(...articles.value);
-  articles.value.push(...articles.value);
-  articles.value.push(...articles.value);
 })
 
 const formatDate = (date) => {
