@@ -5,6 +5,12 @@
         {{ article.value?.attributes.title }}
       </h2>
     </div>
+    <div>
+      <p>{{ article.value?.attributes.content }}</p>
+    </div>
+    <div>
+
+    </div>
   </div>
 </template>
 
@@ -17,7 +23,22 @@ const { locale } = useI18n()
 const article = reactive([])
 
 onBeforeMount(async () => {
-  const response = await findOne('articles', route.params.id, { populate: 'photos.media,localizations,createdBy', locale: locale.value })
-  article.value = response.data
-})
+  const router = useRouter();
+  try {
+    const { data } = await findOne('articles', route.params.id, { populate: 'photos.media,localizations,createdBy', locale: locale.value })
+    article.value = data
+
+    if (article.value.attributes.locale !== locale.value) {
+      const correctLocalization = article.value.attributes.localizations.data.find(localization => localization.attributes.locale === locale.value)
+      if (correctLocalization) {
+        const correctId = correctLocalization.id;
+        const redirectUrl = `/articles/${correctId}`;
+        router.push(redirectUrl);
+        return;
+      }
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
 </script>
