@@ -10,10 +10,17 @@ export default defineNuxtConfig({
   ],
   i18n: {
     locales: [
-      { code: "zh", iso: "zh-TW", file: "zh.js", dir: "ltr" },
-      { code: "en", iso: "en-US", file: "en.js", dir: "ltr" },
+      { code: "zh", iso: "zh-TW", file: "zh.json", dir: "ltr" },
+      { code: "en", iso: "en-US", file: "en.json", dir: "ltr" },
     ],
+    lazy: true,
+    langDir: "lang",
     defaultLocale: "en",
+    strategy: "no_prefix",
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
+    },
   },
   strapi: {
     url: process.env.STRAPI_URL || "http://localhost:1337",
