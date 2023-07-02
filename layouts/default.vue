@@ -1,13 +1,9 @@
 <template>
   <div class="layout">
     <Header />
-    <slot></slot>
+    <div style="min-height: 95vh;">
+      <slot></slot>
+    </div>
     <Footer />
   </div>
 </template>
-
-<style>
-body {
-  min-height: 110vh;
-}
-</style>
