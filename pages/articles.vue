@@ -16,10 +16,11 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue'
 const { find } = useStrapi4()
+const { locale } = useI18n()
 
 const articles = ref([])
 onBeforeMount(async () => {
-  const response = await find('articles', { populate: 'media,createdBy' })
+  const response = await find('articles', { populate: 'media,createdBy', locale: locale.value })
   articles.value = response.data
 })
 </script>
