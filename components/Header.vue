@@ -32,9 +32,9 @@ export default {
   data() {
     return {
       links: [
-        { text: 'Home', href: '/' },
-        { text: 'Articles', href: '/articles' },
-        { text: 'Photos', href: '/photos' }
+        { text: this.$t('home'), href: '/' },
+        { text: this.$t('articles'), href: '/articles' },
+        { text: this.$t('photos'), href: '/photos' }
       ]
     };
   }
