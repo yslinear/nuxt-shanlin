@@ -8,8 +8,8 @@
     <div>
       <p>{{ article.value?.attributes.content }}</p>
     </div>
-    <div>
-
+    <div v-for="photo in article.value?.attributes.photos.data" :key="photo.id">
+      <Photo :photo="photo" />
     </div>
   </div>
 </template>
