@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="rounded bg-slate-200 mb-4 p-4">
+    <div class="rounded bg-slate-200 mb-4 p-4 text-slate-800">
       <h2 class="text-lg mb-4">
         {{ article.value?.attributes.title }}
       </h2>

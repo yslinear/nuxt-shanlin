@@ -1,11 +1,11 @@
 <template>
-  <div class="border p-4 rounded">
+  <div class="border p-4 rounded text-slate-800">
     <img :src="imageUrl" class="w-full h-full object-cover mb-2">
     <div class="text-base font-normal">{{ photo.attributes.caption }}</div>
     <div class="text-sm text-slate-500 my-1">{{ formatDateTime(photo.attributes.createdAt, locale) }}</div>
     <div>
       <p class="text-sm" v-for="hashtag in photo.attributes.hashtags?.data" :key="hashtag.id">
-      #{{ hashtag.attributes.text }}
+        #{{ hashtag.attributes.text }}
       </p>
     </div>
   </div>

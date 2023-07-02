@@ -1,8 +1,8 @@
 <template>
   <nav class="bg-slate-200">
     <div class="max-w-screen-md flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="/" class="flex items-center">
-        <img src="https://www.shanlin.co/templates/g5_helium/custom/images/logo-no-background.png" class="h-8 mr-3"
+      <a href="/" class="items-center p-2 bg-sky-950 rounded">
+        <img src="https://www.shanlin.co/templates/g5_helium/custom/images/logo-no-background.png" class="h-10"
           alt="ShanLin Logo" />
       </a>
       <div>
