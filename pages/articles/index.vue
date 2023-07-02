@@ -4,7 +4,7 @@
       <a :href="`articles/${article.id}`">
         <img :src="`http://localhost:1337${article.attributes.photos.data[0].attributes.media.data.attributes.url}`"
           class="w-full h-96 object-cover mb-4">
-        <div class="text-sm mb-4 font-bold">{{ formatDate(article.attributes.createdAt) }}</div>
+        <div class="text-sm mb-4 font-bold">{{ formatDateTime(article.attributes.createdAt, locale) }}</div>
         <h3 class="text-lg font-bold mb-4">{{ article.attributes.title }}</h3>
         <p class="text-sm mb-4">{{ article.attributes.content }}</p>
       </a>
@@ -23,9 +23,4 @@ onBeforeMount(async () => {
   const response = await find('articles', { populate: 'photos.media,createdBy', locale: locale.value })
   articles.value = response.data
 })
-
-const formatDate = (date) => {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' }
-  return new Date(date).toLocaleDateString(locale.value, options)
-}
 </script>
