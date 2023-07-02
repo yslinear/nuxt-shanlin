@@ -9,6 +9,7 @@
 <script setup>
 import { computed } from 'vue'
 import { defineProps } from 'vue'
+const { locale } = useI18n()
 
 // 使用 `props` 接收傳入的 `photo` 參數
 const props = defineProps({
@@ -24,6 +25,6 @@ const imageUrl = computed(() => `http://localhost:1337${props.photo.attributes.m
 // 格式化日期函式
 const formatDate = (date) => {
   const options = { year: 'numeric', month: 'long', day: 'numeric' }
-  return new Date(date).toLocaleDateString(undefined, options)
+  return new Date(date).toLocaleDateString(locale.value, options)
 }
 </script>
