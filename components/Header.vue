@@ -2,7 +2,7 @@
   <nav>
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-slate-50">
       <a href="/" class="flex items-center">
-        <img src="https://www.shanlin.co/templates/g5_helium/custom/images/logo-no-background.png" class="h-8 mr-3" alt="Shanlin Logo" />
+        <img src="https://www.shanlin.co/templates/g5_helium/custom/images/logo-no-background.png" class="h-8 mr-3" alt="ShanLin Logo" />
       </a>
       <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden
          hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400
@@ -19,7 +19,7 @@
         <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:border-0">
           <li v-for="(link, index) in links" :key="index">
             <a :href="link.href" class="block py-2 pl-3 pr-4 md:p-0 text-slate-800"
-              :class="`${$route.path === link.href ? 'font-bold' : 'font-light'}`" aria-current="page">{{ link.text }}</a>
+              :class="`${$route.path === link.href ? 'font-bold' : 'font-light'}`" aria-current="page" v-t="link.text"></a>
           </li>
         </ul>
       </div>
@@ -32,9 +32,9 @@ export default {
   data() {
     return {
       links: [
-        { text: this.$t('home'), href: '/' },
-        { text: this.$t('articles'), href: '/articles' },
-        { text: this.$t('photos'), href: '/photos' }
+        { text: 'home', href: '/' },
+        { text: 'articles', href: '/articles' },
+        { text: 'photos', href: '/photos' }
       ]
     };
   }

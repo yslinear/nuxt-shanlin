@@ -10,8 +10,8 @@ export default defineNuxtConfig({
   ],
   i18n: {
     locales: [
-      { code: "zh", iso: "zh-TW", file: "zh.json", dir: "ltr" },
-      { code: "en", iso: "en-US", file: "en.json", dir: "ltr" },
+      { code: "zh", iso: "zh-TW", file: "zh.json", name: "繁體中文" },
+      { code: "en", iso: "en-US", file: "en.json", name: "English" },
     ],
     lazy: true,
     langDir: "lang",
@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: "i18n_redirected",
+      alwaysRedirect: true,
     },
   },
   strapi: {
