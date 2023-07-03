@@ -14,7 +14,7 @@ const { locale } = useI18n()
 const photos = reactive([])
 
 onBeforeMount(async () => {
-  const response = await find('photos', { populate: 'media,hashtags,createdBy', locale: locale.value })
+  const response = await find('photos', { populate: 'media,hashtags,createdBy,recordedAt', locale: locale.value })
   photos.value = response.data
 })
 </script>

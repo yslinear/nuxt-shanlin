@@ -23,7 +23,10 @@ const article = reactive([])
 onBeforeMount(async () => {
   const router = useRouter();
   try {
-    const { data } = await findOne('articles', route.params.id, { populate: 'localizations,createdBy,photos.media,photos.hashtags', locale: locale.value })
+    const { data } = await findOne('articles', route.params.id, {
+      populate: 'localizations,createdBy,photos.media,photos.hashtags,photos.recordedAt',
+      locale: locale.value
+    })
     article.value = data
 
     if (article.value.attributes.locale !== locale.value) {

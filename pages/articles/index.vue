@@ -2,7 +2,9 @@
   <ul class="gap-4 grid grid-cols-1 lg:grid-cols-2">
     <li v-for="article in articles.value" :key="article.id">
       <a :href="`articles/${article.id}`">
-        <img :src="`http://localhost:1337${article.attributes.photos.data[0].attributes.media.data.attributes.url}`"
+        <img :src="`${useStrapiMedia()}${article.attributes.photos.data[0].attributes.media.data.attributes.formats.medium.url}`"
+        :srcset="`${useStrapiMedia()}${article.attributes.photos.data[0].attributes.media.data.attributes.formats.medium.url} 500w,
+                      ${useStrapiMedia()}${article.attributes.photos.data[0].attributes.media.data.attributes.formats.large.url} 1000w`"
           class="w-full h-96 object-cover mb-4">
         <div class="text-sm mb-4 font-bold">{{ formatDateTime(article.attributes.createdAt, locale) }}</div>
         <h3 class="text-lg font-bold mb-4">{{ article.attributes.title }}</h3>
