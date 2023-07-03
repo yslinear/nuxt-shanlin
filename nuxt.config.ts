@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/i18n",
     "nuxt-icon",
+    "@nuxt/image",
     "@nuxtjs/tailwindcss",
     "nuxt-headlessui",
     "@nuxtjs/strapi",
