@@ -15,7 +15,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import { defineProps } from 'vue'
 const { locale } = useI18n()
 
