@@ -4,10 +4,9 @@
       <h2 class="text-lg mb-4">
         {{ article.value?.attributes.title }}
       </h2>
-      <p>{{ article.value?.attributes.content }}</p>
+      <MarkdownStringRenderer v-if="article.value" :value="article.value?.attributes.content" />
     </div>
-    <div v-for="photo in article.value?.attributes.photos.data" :key="photo.id"
-    class="mb-4">
+    <div v-for="photo in article.value?.attributes.photos.data" :key="photo.id" class="mb-4">
       <Photo :photo="photo" />
     </div>
   </div>
