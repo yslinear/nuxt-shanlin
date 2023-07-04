@@ -8,7 +8,7 @@
           class="w-full h-96 object-cover mb-4">
         <div class="text-sm mb-4 font-bold">{{ formatDateTime(article.attributes.createdAt, locale) }}</div>
         <h3 class="text-lg font-bold mb-4">{{ article.attributes.title }}</h3>
-        <p class="text-sm mb-4">{{ article.attributes.content }}</p>
+        <MarkdownStringRenderer class="text-sm mb-4 [&>*:not(:first-child)]:hidden" v-if="article" :value="article.attributes.content" />
       </a>
     </li>
   </ul>
